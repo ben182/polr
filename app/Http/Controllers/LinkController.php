@@ -84,8 +84,13 @@ class LinkController extends Controller {
         	}
         }
 
-        // Increment click count
         $long_url = $link->long_url;
+        if((new CrawlerDetect)->isCrawler()) {
+            // Redirect to final destination
+            return redirect()->to($long_url, 301);
+        }
+
+        // Increment click count
         $clicks = intval($link->clicks);
 
         if (is_int($clicks)) {
