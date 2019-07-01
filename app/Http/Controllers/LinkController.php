@@ -8,6 +8,7 @@ use App\Factories\LinkFactory;
 use App\Helpers\CryptoHelper;
 use App\Helpers\LinkHelper;
 use App\Helpers\ClickHelper;
+use Jaybizzle\CrawlerDetect\CrawlerDetect;
 
 class LinkController extends Controller {
     /**
